@@ -218,16 +218,8 @@ class AI(commands.Cog):
         await ctx.send(f"Pong! {round(self.bot.latency * 12142.241627391)}ms")
     
     @commands.command()
-    async def ai(self, ctx, member: discord.Member = None):
-        """AI with NSFW."""
-        if member:
-            await ctx.send(f"{member.mention} {random.choice(rand_ai_resp)}")
-        else:
-            await ctx.send(random.choice(rand_ai_resp))
-
-    @commands.command()
     async def safeai(self, ctx, member: discord.Member = None):
-        """AI but SFW. Can be run outside a NSFW channel"""
+        """Safe For Work AI. Can be run outside a NSFW channel"""
         if member:
             await ctx.send(f"{member.mention} {random.choice(rand_ai_resp)}")
         else:
