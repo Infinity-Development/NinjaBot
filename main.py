@@ -33,6 +33,13 @@ async def on_ready():
     print('------')
 
 
+#@bot.event
+async def on_message(msg):
+	for m in msg.mentions:
+		if m.id == bot.user.id:
+			await msg.channel.send("This bots prefix is @Ninja Bot")
+			break
+
 async def main():
     async with bot:
         # Load all cogs from cmds folder
